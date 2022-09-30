@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Klee One', serif;
+}
+
+.title {
+background: linear-gradient(blue,rgb(174, 179, 248));
+Font-size: 20px;
+font-family: serif;
+font-weight: 600;
+text-align: center;
+color: white;
+height: 55px;
+}
+
+.top-img{
+padding-left: 40px;
+padding-top:300px;
+}
+.pages{
+  padding-left:50px;
+  margin:10px;
+  }
+  
+  .container {
+      height: 100%;
+      padding: 0;
+    }
+    
+    .menu {
+      background:linear-gradient(rgb(36, 137, 246),rgb(157, 171, 244),rgb(36, 137, 246));
+      color: #fff;
+      position: absolute;
+      height: 100%;
+      width: 40px;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: width 0.1s ease-in;
+      transition-delay: 0.3s;
+    }
+    .brand {
+      height: 70px;
+      background-size: 150px 30px;
+      background-repeat: no-repeat;
+      background-position: left 12px center;
+    }
+    
+    .contents {
+      background: #eee;
+      height: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      margin-left: 45px;
+    }
+    
+    .menu-item .fa {
+      font-size: 19px;
+      width: 45px;
+      text-align: center;
+      color:#fff;
+      
+    }
+    
+    .menu-item {
+      line-height: 35px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      padding-left: 50px;
+  
+  
+    }
+    
+    .menu-item:hover {
+      background: #67a9f0e2;
+      border:solid #fff;
+      padding-left: 20px;
+      transition:padding-left 0.2s;
+    }
+    
+    .menu:hover {
+      width: 240px;
+    }
+
+/*ここまでテンプレ*/
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+a {
+  text-decoration:none; 
+}
+
+html {
+ overflow-y: scroll;
+}
+
+.main_1{
+  display: block;
+  height: 70px;
+  width: 80%;
+  margin: auto;
+  background-color: gray;
+}
+.main_2{
+  display: block;
+  height: 70px;
+  width: 80%;
+  margin: auto;
+  background-color:gray;
+}
+.reset{
+  margin-left:10%;
+}
+
+.sub{
+  display: none;
+  height:30px;
+  line-height: 30px;
+  width: 80%;
+  margin:auto;
+  margin-top: 0px;
+  padding:4px 4px 0 0;
+  background-color: antiquewhite;
+  overflow-wrap: break-word;
+}
+.button{
+position: relative;
+margin: auto 0 0 0;
+
+}
+.data{
+  position: relative;
+  top: -20px;
+  margin:0 0 0 180px;
+}
+
+table{
+  table-layout: fixed;
+  width: 450px;
+  height:27px;
+  font-size: 16px;
+  text-align: left;
+}
+
+.category{
+background-color: darkgrey;
+height: 30px;
+display: inline-block;
+line-height: 30px;
+width: 30%;
+border: 3px;
+border-style: inherit;
+border-radius: 8px;
+border-color: aquamarine;
+padding-bottom: 10px;
+margin: 0 0 10px 10px;
+overflow-wrap: break-word;
+transition: height 0.3s linear;
+}
+
+.button_3{
+  display: none;
+}
+
+.rank{
+  position: relative;
+top:-90px;
+}

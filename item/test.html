@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>サモンメイトデータベース</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+
+  <!--テンプレ-->
+  <div class="title">
+    <p>
+      <a href="top.html" style="color:#FFF;text-decoration:none">ふぁなしのサモンメイト攻略データベース</a>
+    </p>
+  </div>
+  <div class="container">
+    <ul class="menu">
+      <li class="brand">
+        <p style="text-align:right">
+          <img src="../ライウォリア.gif" class="top-img" width="60%">
+        </p>
+      </li>
+      <li class="menu-item">
+        <a href="top.html" style="color:#FFF;text-decoration:none">Top　　　　　　</a>
+      </li>
+      <li class="menu-item">
+        <a href="monster/page.html" style="color:#FFF;text-decoration:none">モンスター一覧　　　　　　</a>
+      </li>
+      <li class="menu-item">
+        <a href="element/page.html" style="color:#FFF;text-decoration:none">属性表　　　　　　</a>
+      </li>
+      <li class="menu-item">
+        <a href="status/page.html" style="color:#FFF;text-decoration:none">ステータス一覧/比較　　　　　　</a>
+      </li>
+    </ul>
+  </div>
+  <!--テンプレ-->
+  <div class="subtitle">
+    アイテム
+  </div>
+
+  <div class="pages">
+
+    <div class="main_contents" style="background-color:rgb(228, 140, 140);">
+      <b>
+        使用系
+      </b>
+      <div class="item">
+        <table border="1">
+          <tr class="item_1">
+            <td class="first">名前</td>
+            <td>効果</td>
+            <td>購入価格</td>
+            <td>売却価格</td>
+            <td class="last">入手場所</td>
+          </tr>
+          <tr class="item_2">
+            <td class="first">やくそう</td>
+            <td>仲間1体の体力を18回復</td>
+            <td>10</td>
+            <td>7</td>
+            <td class="last">北の洞窟,小さな村B1F</td>
+          </tr>
+          <tr class="item_2">
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:城下町,小さな村,神殿の町,旅人の家,ネクスト城,海の家,ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:スライム</td>
+          </tr>
+          <tr>
+            <td class="first">回復剤</td>
+            <td>仲間1体の体力を54回復</td>
+            <td>50</td>
+            <td>37</td>
+            <td class="last">購入:神殿の町,ネクスト城,ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">キュアラ草</td>
+            <td>仲間全員の体力を30回復</td>
+            <td>購入不可</td>
+            <td>150</td>
+            <td class="last">呪いの迷宮B3,4F,女神の城4F,海の家,不思議の森,太陽の迷宮B2F,ミラー城2F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:悪トパス,水の精霊</td>
+          </tr>
+          <tr>
+            <td class="first">全快草</td>
+            <td>仲間全体の体力を全回復</td>
+            <td>購入不可</td>
+            <td>300</td>
+            <td class="last">悪魔の迷宮B4F,ネクスト城2F,女神の城5F,冥界ダンジョンB3F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:クレイジラ,ゴーレム</td>
+          </tr>
+          <tr>
+            <td class="first">不思議な草</td>
+            <td>仲間1体のMPを16回復</td>
+            <td>100</td>
+            <td>75</td>
+            <td class="last">呪いの迷宮B3,4F,不思議の森</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:城下町</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:デビガメ</td>
+          </tr>
+          <tr>
+            <td class="first">MP草</td>
+            <td>仲間1体のMPを全回復</td>
+            <td>購入不可</td>
+            <td>225</td>
+            <td class="last">ムササビの塔5F,呪いの迷宮B1F,不思議の森,女神の城1F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:メタルスライム,デビルうなぎ</td>
+          </tr>
+          <tr>
+            <td class="first">えり草</td>
+            <td>仲間1体の体力とMPを全回復</td>
+            <td>購入不可</td>
+            <td>600</td>
+            <td class="last">呪いの迷宮B4F,不思議の森,女神の城2F,太陽の迷宮B2F,仙人のほこら,冥界ダンジョンB5F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:大地の精霊</td>
+          </tr>
+          <tr>
+            <td class="first">不死鳥の羽</td>
+            <td>仲間1体を体力半分で蘇生</td>
+            <td>50</td>
+            <td>37</td>
+            <td class="last">北の洞窟,小さな村B1F,呪いの迷宮B1F,ライの塔1F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:城下町,小さな村,神殿の町,旅人の家,ネクスト城,海の家,ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:ハーピー、デスクロウ</td>
+          </tr>
+          <tr>
+            <td class="first">不死鳥の卵</td>
+            <td>仲間1体を完全蘇生</td>
+            <td>購入不可</td>
+            <td>375</td>
+            <td class="last">悪魔の迷宮B1F,呪いの迷宮B4F,不思議の森,女神の城3F,ライの塔5F,太陽の迷宮2F,ミラー城2F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:火の精霊</td>
+          </tr>
+          <tr>
+            <td class="first">炎の玉</td>
+            <td>約19ダメージの火属性攻撃</td>
+            <td>20</td>
+            <td>15</td>
+            <td class="last">オシロ城1F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:小さな村,神殿の町,旅人の家,ネクスト城</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:ドラゴンヘッド,火の子</td>
+          </tr>
+          <tr>
+            <td class="first">毒消し草</td>
+            <td>仲間1体の毒状態解除</td>
+            <td>8</td>
+            <td>6</td>
+            <td class="last">北の洞窟B1F,城の地下道</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:城下町,旅人の家,ネクスト城,海の家,ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:はぐれスライム,グール</td>
+          </tr>
+          <tr>
+            <td class="first">毒薬</td>
+            <td>敵1体を毒状態にする</td>
+            <td>20</td>
+            <td>15</td>
+            <td class="last">購入:旅人の家,ネクスト城</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:サソリン,ツインテール,ゾンビ</td>
+          </tr>
+          <tr>
+            <td class="first">不思議な砂</td>
+            <td>敵全体を暗闇状態にする</td>
+            <td>30</td>
+            <td>22</td>
+            <td class="last">購入:旅人の家,ネクスト城</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:キングヌー,白虎,オコリンボ</td>
+          </tr>
+          <tr>
+            <td class="first">眠り草</td>
+            <td>敵1体を眠り状態にする</td>
+            <td>10</td>
+            <td>7</td>
+            <td class="last">北の洞窟B1F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:旅人の家,ネクスト城,海の家</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:人食い草,人面切り株</td>
+          </tr>
+          <tr>
+            <td class="first">忘れ草</td>
+            <td>敵1体を沈黙状態にする</td>
+            <td>20</td>
+            <td>15</td>
+            <td class="last">小さな宿屋</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:旅人の家,ネクスト城</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:触手目玉</td>
+          </tr>
+          <tr>
+            <td class="first">強化剤</td>
+            <td>仲間1体の攻撃力を2倍にする</td>
+            <td>40</td>
+            <td>30</td>
+            <td class="last">オシロ城2F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:旅人の家,ネクスト城</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:デビル</td>
+          </tr>
+          <tr>
+            <td class="first">リフレ草</td>
+            <td>仲間全体を反射状態にする(必中)</td>
+            <td>購入不可</td>
+            <td>37</td>
+            <td class="last">女神の城5F</td>
+          </tr>
+          <tr>
+            <td class="first">ダク豆</td>
+            <td>敵1体のステータスを下げる(必中)</td>
+            <td>購入不可</td>
+            <td>75</td>
+            <td class="last">女神の城5F</td>
+          </tr>
+          <tr>
+            <td class="first">ミワクルの札</td>
+            <td>敵1体を混乱状態にする</td>
+            <td>購入不可</td>
+            <td>45</td>
+            <td class="last">ミラー城1F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:バステト</td>
+          </tr>
+          <tr>
+            <td class="first">ウラグルの札</td>
+            <td>敵1体を暴走状態にする</td>
+            <td>購入不可</td>
+            <td>52</td>
+            <td class="last">女神の城1F,レフの塔3F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:サタン</td>
+          </tr>
+          <tr>
+            <td class="first">ミワクーラの札</td>
+            <td>敵全体を混乱状態にする</td>
+            <td>購入不可</td>
+            <td>67</td>
+            <td class="last">女神の城1F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:ミスゾンビ</td>
+          </tr>
+          <tr>
+            <td class="first">ウラグーラの札</td>
+            <td>敵全体を暴走状態にする</td>
+            <td>購入不可</td>
+            <td>82</td>
+            <td class="last">女神の城3F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:アヌビス</td>
+          </tr>
+          <tr>
+            <td class="first">どこかにドア</td>
+            <td>任意の町に移動する</td>
+            <td>30</td>
+            <td>22</td>
+            <td class="last">北の洞窟,城の地下道,ケワシ山</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:城下町,小さな村,神殿の町,旅人の家,ネクスト城,海の家,ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:マーマン</td>
+          </tr>
+          <tr>
+            <td class="first">ドワープの札</td>
+            <td>どこからでも任意の町に移動する</td>
+            <td>500</td>
+            <td>375</td>
+            <td class="last">女神の城1,3,4F,レフライの塔各地,冥界ダンジョンB5F,不思議の洞窟</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">ドロップ:風の精霊</td>
+          </tr>
+          <tr>
+            <td class="first">コソコ草</td>
+            <td>100歩の間敵とエンカウントしなくなる</td>
+            <td>50</td>
+            <td>37</td>
+            <td class="last">呪いの迷宮B2,4F,ネクスト城1F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ネクスト城,海の家,ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">命の木の実</td>
+            <td>対象のMHPが3上がる</td>
+            <td>30000</td>
+            <td>225</td>
+            <td class="last">オシロ城B1F,呪いの迷宮B2F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">命の実の房</td>
+            <td>対象のMHPが10上がる</td>
+            <td>90000</td>
+            <td>675</td>
+            <td class="last">悪魔の迷宮B5F,女神の城3F,レフの塔5F,不思議の洞窟</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">不思議な豆</td>
+            <td>対象のMMPが3上がる</td>
+            <td>30000</td>
+            <td>225</td>
+            <td class="last">城の地下道,神殿の町2F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">不思議な枝豆</td>
+            <td>対象のMMPが10上がる</td>
+            <td>90000</td>
+            <td>675</td>
+            <td class="last">呪いの迷宮B3F,女神の城4F,冥界ダンジョンB4F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">力の種</td>
+            <td>対象のATKが1上がる</td>
+            <td>10000</td>
+            <td>75</td>
+            <td class="last">北の洞窟B1F,呪いの迷宮B3F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">力の球根</td>
+            <td>対象のATKが4上がる</td>
+            <td>40000</td>
+            <td>300</td>
+            <td class="last">悪魔の迷宮B8F,太陽の迷宮B2F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">守りの種</td>
+            <td>対象のDEFが1上がる</td>
+            <td>10000</td>
+            <td>75</td>
+            <td class="last">ムササビの塔3F,ネクスト城1F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">守りの球根</td>
+            <td>対象のDEFが6上がる</td>
+            <td>60000</td>
+            <td>450</td>
+            <td class="last">ケワシ山,呪いの迷宮B3F,船守り所,浮島の小屋</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">素早さの種</td>
+            <td>対象のAGLが1上がる</td>
+            <td>10000</td>
+            <td>75</td>
+            <td class="last">ムササビの塔4F,呪いの迷宮B1F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">素早さの球根</td>
+            <td>対象のAGLが7上がる</td>
+            <td>70000</td>
+            <td>525</td>
+            <td class="last">オシロ城2F,呪いの迷宮B4F,孤島の家,隠れ里</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">魔力の種</td>
+            <td>対象のMGCが1上がる</td>
+            <td>10000</td>
+            <td>75</td>
+            <td class="last">オシロ城1F,ネクスト城2F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">魔力の球根</td>
+            <td>対象のMGCが5上がる</td>
+            <td>50000</td>
+            <td>375</td>
+            <td class="last">呪いの迷宮B2F,仙人のほこら,冥界ダンジョンB1F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">精神の種</td>
+            <td>対象のSPRが1上がる</td>
+            <td>10000</td>
+            <td>75</td>
+            <td class="last">オシロ城B1F,ネクスト城B1F,神殿の町</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">精神の球根</td>
+            <td>対象のSPRが6上がる</td>
+            <td>60000</td>
+            <td>450</td>
+            <td class="last">悪魔の迷宮B8F,ライの塔3F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+          <tr>
+            <td class="first">契約の書</td>
+            <td>敵1体の契約率が10%上がる</td>
+            <td>100</td>
+            <td>75</td>
+            <td class="last">女神の城1～4F</td>
+          </tr>
+          <tr>
+            <td class="first"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="last">購入:ミラー城</td>
+          </tr>
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

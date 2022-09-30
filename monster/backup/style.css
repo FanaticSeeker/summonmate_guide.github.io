@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  background: linear-gradient(blue, rgb(174, 179, 248));
+  Font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  height: 55px;
+}
+
+.top-img {
+  padding-left: 40px;
+  padding-top: 200px;
+}
+
+.pages {
+  padding-left: 50px;
+  margin: 10px;
+}
+
+.container {
+  height: 100%;
+  padding: 0;
+}
+
+.menu {
+  background: linear-gradient(rgb(36, 137, 246), rgb(157, 171, 244), rgb(36, 137, 246));
+  color: #fff;
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: width 0.1s ease-in;
+  transition-delay: 0.3s;
+}
+
+.brand {
+  height: 70px;
+  background-size: 150px 30px;
+  background-repeat: no-repeat;
+  background-position: left 12px center;
+}
+
+.contents {
+  background: #eee;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-left: 45px;
+}
+
+.menu-item .fa {
+  font-size: 19px;
+  width: 45px;
+  text-align: center;
+  color: #fff;
+
+}
+
+.menu-item {
+  line-height: 35px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  padding-left: 50px;
+
+
+}
+
+.menu-item:hover {
+  background: #67a9f0e2;
+  border: solid #fff;
+  padding-left: 20px;
+  transition: padding-left 0.2s;
+}
+
+.menu:hover {
+  width: 240px;
+}
+
+/*ここまでテンプレ*/
+
+
+
+
+
+
+body {
+  background-color: white;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: 10;
+}
+
+.contents {
+  background-color: #fff;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.text {
+  position: absolute;
+  padding-left:250px ;
+  padding-top: 20px;
+  font-size:20px;
+}
+
+.a {
+  color: aqua;
+  font-weight: 800;
+}
+
+.f {
+  color: red;
+}
+
+.e {
+  color: brown;
+}
+
+.w {
+  color: green;
+}
+
+.l {
+  color: yellow;
+}
+
+.d {
+  color: purple;
+}
