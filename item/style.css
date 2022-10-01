@@ -105,7 +105,7 @@ html {
 .main_contents {
   font-size: 17px;
   display: inline-block;
-  width: 70%;
+  width: 90%;
   height: max-content;
   border-radius: 20px;
   text-align: center;
@@ -115,17 +115,17 @@ html {
   vertical-align: top;
   margin-bottom: 20px;
   box-shadow: 2px 2px 4px gray;
-
-
 }
 
-.item {
-  position: relative;
-  text-align: center;
+.main_contents.close{
+height: 40px;
+}
+
+.item{
   color: rgb(0, 0, 0);
   padding: auto;
   margin: auto;
-  display: block;
+  display: none;
 }
 
 .item a {

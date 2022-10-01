@@ -55,19 +55,19 @@ $(function () {
 $(function () {
     $(".main_contents").click(function (event) {
 
-        console.log("item_");
+       console.log("item_");
         var $target = $(event.target).closest(".main_contents");
 
         if ($target.hasClass("close")) {
-            $target.children(".item").fadeIn(200);
+            $target.children(".item").slideToggle();
             $target.animate({ height: "max-content"});
             $target.addClass("open");
             $target.removeClass("close");
         }else{
-            $target.children(".item").fadeOut(200);
-            $target.animate({ height: "40px" });
-            $target.addClass("close");
-            $target.removeClass("open");
+            $target.children(".item").slideUp(500,function(){
+                $target.addClass("close");
+                $target.removeClass("open");
+            });
         }
 
 
