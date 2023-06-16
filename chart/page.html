@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>系統図 - ふぁなしのサモンメイト完全ガイド</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+
+  <!--テンプレ-->
+  <div class="title">
+    <p>
+      <a href="../index.html" style="color:#FFF;text-decoration:none">ふぁなしのサモンメイト完全ガイド</a>
+    </p>
+  </div>
+  <div class="container">
+    <ul class="menu">
+      <li class="brand">
+        <p style="text-align:right">
+          <img src="../ライウォリア.gif" class="top-img" width="60%">
+        </p>
+      </li>
+      <li class="menu-item">
+        <a href="../index.html" style="color:#FFF;text-decoration:none">Top　　　　　　</a>
+      </li>
+      <li class="menu-item">
+        <a href="../monster/page.html" style="color:#FFF;text-decoration:none">モンスター一覧　　　　　　</a>
+      </li>
+      <li class="menu-item">
+        <a href="page.html" style="color:#FFF;text-decoration:none">属性表　　　　　　</a>
+      </li>
+      <li class="menu-item">
+        <a href="../status/page.html" style="color:#FFF;text-decoration:none">ステータス一覧/比較　　　　　　</a>
+      </li>
+    </ul>
+  </div>
+  <!--テンプレ-->
+  <div class="pages">
+
+    <p>summonmate_guide/chart/data.jsonを編集してください。</p><br>
+    <canvas id="chart" width="600" height="400" style="border:skyblue solid 1px">
+      <p>Canvasが非対応です。HTML5に対応したブラウザで利用してください。</p>
+
+    </canvas>
+
+
+    <script>
+      var data = [];
+      var i = 0;
+      var natural = 0;
+      var Maxlevel = 0;
+
+      $.ajax({
+        url: "data.json",
+        dataType: "json",
+        success: function (data) {
+
+          function addLevelToObjects(data, level) {
+
+            $.each(data, function (i, obj) {
+              obj.level = level;
+              console.log(obj);
+              if (obj.value !== "none") {
+                if ($.isArray(obj.value)) {
+                  addLevelToObjects(obj.value, level + 1);
+                } else {
+                  addLevelToObjects([obj.value], level + 1);
+                }
+              }
+              else {
+                natural++;
+              }
+
+              if (level > Maxlevel) {
+                Maxlevel = level;
+              }
+            });
+          }
+
+          addLevelToObjects(data, 0);
+
+          console.log(data);
+          console.log("natural : " + natural);
+          console.log(Maxlevel);
+
+          var canvas = document.getElementById("chart");
+          var ctx = canvas.getContext("2d");
+          var CanvasWidth = 300 * Maxlevel;
+          var CanvasHeight = 90 * natural;
+          canvas.width = CanvasWidth;
+          canvas.height = CanvasHeight;
+
+
+
+          //描画
+          var canvas = document.getElementById("chart");
+          var ctx = canvas.getContext("2d");
+
+          function drawNode(x, y, name) {
+            var length = name.length;
+            var width = (length * 18) + 20;
+
+            ctx.strokeRect(x, y - 15, width, 30);
+            ctx.font = '18px serif';
+            ctx.fillText(name, x + 10, y + 6);
+            return length;
+          }
+
+          function drawLine(x, y, x2, y2) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+          }
+
+          function drawChart(data, x, y) {
+            drawNode(x, y, data.name);
+            console.log("value : " + data.name + "  child1 : " + data.value[0].name + "  child2 : " + data.value[1].name);
+            var scale = 20;
+            if (data.value !== "none") {
+              drawChart(data.value[0], x + 220, y - 20 - ((Maxlevel - data.level) * scale));
+              drawLine(x + (data.name.length * 18 + 20), y, x + 220, y - 10 - ((Maxlevel - data.level) * scale));
+              drawChart(data.value[1], x + 220, y + 20 + ((Maxlevel - data.level) * scale));
+              drawLine(x + (data.name.length * 18 + 20), y, x + 220, y + 10 + ((Maxlevel - data.level) * scale));
+              console.log("AddNode : " + data.name);
+            }
+
+
+          }
+
+          drawChart(data[0], 30, CanvasHeight / 2);
+
+        }
+
+
+
+      });
+
+
+
+      $("#add").click(function (event) {
+        ctx.strokeRect(100, 240, 140, 30);
+      });
+
+
+    </script>
+  </div>
+
+</body>
+
+</html>

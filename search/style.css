@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Klee One', serif;
+}
+
+.title {
+  background: linear-gradient(blue, rgb(174, 179, 248));
+  Font-size: 20px;
+  font-family: serif;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  height: 55px;
+}
+
+.subtitle {
+  padding-left: 50px;
+  Font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.top-img {
+  padding-left: 40px;
+  padding-top: 200px;
+}
+
+.pages {
+  padding-left:10%;
+  padding-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  height: 100%;
+  padding: 0;
+  position: absolute;
+  z-index: 100;
+}
+
+.menu {
+  background: linear-gradient(rgb(36, 137, 246), rgb(157, 171, 244), rgb(36, 137, 246));
+  color: #fff;
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: width 0.1s ease-in;
+  transition-delay: 0.1s;
+}
+
+.brand {
+  height: 70px;
+  background-size: 150px 30px;
+  background-repeat: no-repeat;
+  background-position: left 12px center;
+}
+
+.contents {
+  background: #eee;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-left: 45px;
+}
+
+.menu-item .fa {
+  font-size: 19px;
+  width: 45px;
+  text-align: center;
+  color: #fff;
+
+}
+
+.menu-item {
+  line-height: 35px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  padding-left: 50px;
+
+
+}
+
+.menu-item:hover {
+  background: #67a9f0e2;
+  border: solid #fff;
+  padding-left: 20px;
+  transition: padding-left 0.2s;
+}
+
+.menu:hover {
+  width: 240px;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+/*ここまでテンプレ*/
+
+.main_contents {
+  font-size: 17px;
+  display: inline-block;
+  width: 90%;
+  height: max-content;
+  border-radius: 20px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease;
+  vertical-align: top;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 4px gray;
+}
+
+.main_contents.close{
+height: 40px;
+}
+
+.item{
+  color: rgb(0, 0, 0);
+  padding: auto;
+  margin: auto;
+  display: none;
+}
+
+.item a {
+  text-decoration: none;
+  color: blue;
+}
+
+.item_1 {
+  background-color: #aac9e9e2;
+}
+
+.item_2 {
+  background-color: #b0e9dfe2;
+}
+
+.main_contents p {
+  display: none;
+}
+
+.main_contents b {
+  vertical-align: bottom;
+}
+
+
+.main_contents .link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.start{
+  width: 80px;
+  height: 40px;
+  font-size: 18px;
+}
+
+.resultBox{
+  background-color: aquamarine;
+  border-radius: 30px;
+  width:70%;
+  height: max-content;
+  position: relative;
+  padding: 13px 10px 13px 10px;
+  display: none;
+  box-shadow: 10px 5px 5px gray;
+}
+
+p.resultBox{
+  position: relative;
+  left: 55px;
+  font-size: 18px;
+}
+
+.recipe{
+  background-color: rgb(184, 136, 184);
+  padding: 0px 5px 0px 5px ;
+  
+}
