@@ -1,0 +1,58 @@
+<html>
+<head>
+ <title>ツリー構造</title>
+</head>
+<body>
+ <canvas id="canvas" width="500" height="500"></canvas>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.12.0/p5.min.js"></script>
+ <script>
+ var canvas = document.getElementById("canvas");
+ var ctx = canvas.getContext("2d");
+
+ // ツリー構造を描画する関数
+ function drawTree(data, x, y) {
+   // データがオブジェクトかどうかを確認する
+   if (typeof data === "object") {
+     // オブジェクトが親オブジェクトかどうかを確認する
+     if (data.type === "obj") {
+       // 親オブジェクトを描画する
+       ctx.fillStyle = "black";
+       ctx.fillRect(x, y, 100, 20);
+       ctx.fillStyle = "white";
+       ctx.fillText(data.name, x + 10, y + 10);
+
+       // 子オブジェクトを再帰的に描画する
+       for (var i = 0; i < data.value.length; i++) {
+         drawTree(data.value[i], x + 120, y + 20);
+       }
+     } else {
+       // 子オブジェクトを描画する
+       ctx.fillStyle = "blue";
+       ctx.fillRect(x, y, 50, 20);
+       ctx.fillStyle = "white";
+       ctx.fillText(data.name, x + 10, y + 10);
+     }
+   }
+ }
+
+ // データの読み込み
+ var data = {
+     "type": "obj",
+     "name": "親オブジェクト1",
+     "value": [
+       {
+         "type": "base",
+         "name": "子オブジェクト1-1"
+       },
+       {
+         "type": "base",
+         "name": "子オブジェクト1-2"
+       }
+     ]
+   };
+
+ // ツリー構造を描画する
+ drawTree(data, 0, 0);
+</script>
+</body>
+</html>

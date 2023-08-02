@@ -1,0 +1,51 @@
+[
+    {
+        "name": "ケンタリーダー",
+        "value": [
+            {
+                "name": "ケンタリーダー",
+                "value": [
+                    {
+                        "name": "ケンタウロス",
+                        "value": "none"
+                    },
+                    {
+                        "name": "アクスリーダー",
+                        "value": "none"
+                    }
+                ]
+            },
+            {
+                "name": "ビーストドラゴン",
+                "value": [
+                    {
+                        "name": "ビーストドラゴン",
+                        "value": [
+                            {
+                                "name": "真竜",
+                                "value": "none"
+                            },
+                            {
+                                "name": "白虎",
+                                "value": "none"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "銀狼",
+                        "value": [
+                            {
+                                "name": "銀狼",
+                                "value": "none"
+                            },
+                            {
+                                "name": "ケルベロス",
+                                "value": "none"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

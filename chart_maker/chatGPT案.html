@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ノード</title>
+    <style>
+        .node {
+            width: 120px;
+            height: 50px;
+            border: 1px solid black;
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .button {
+            width: 50px;
+            height: 20px;
+            background-color: lightblue;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+        }
+    </style>
+    <script>
+        function addNodes() {
+            var node = this.parentNode;
+            var newNode1 = createNode();
+            var newNode2 = createNode();
+
+            node.parentNode.appendChild(newNode1);
+            node.parentNode.appendChild(newNode2);
+        }
+
+        function createNode() {
+            var node = document.createElement("div");
+            node.className = "node";
+
+            var button = document.createElement("button");
+            button.className = "button";
+            button.innerHTML = "Click";
+            button.addEventListener("click", addNodes);
+
+            var textBox = document.createElement("input");
+            textBox.type = "text";
+
+            node.appendChild(textBox);
+            node.appendChild(button);
+
+            return node;
+        }
+    </script>
+</head>
+<body>
+    <div class="node">
+        <input type="text">
+        <button class="button" onclick="addNodes()">Click</button>
+    </div>
+</body>
+</html>

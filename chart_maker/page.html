@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>系図ファイル作成</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <!--テンプレ-->
+  <div class="title">
+    <p>
+      <a href="../index.html" style="color:#FFF;text-decoration:none">ふぁなしのサモンメイト完全ガイド</a>
+    </p>
+  </div>
+  <div class="container">
+    <ul class="menu">
+      <li class="brand">
+        <p style="text-align:right">
+          <img src="../ライウォリア.gif" class="top-img" width="60%">
+        </p>
+      </li>
+      <li class="menu-item">
+        <a href="../index.html" style="color:#FFF;text-decoration:none">Top　　　　　　</a>
+      </li>
+      <li class="menu-item">
+        <a href="../monster/page.html" style="color:#FFF;text-decoration:none">モンスター一覧　　　　　　</a>
+      </li>
+      <li class="menu-item">
+        <a href="page.html" style="color:#FFF;text-decoration:none">属性表　　　　　　</a>
+      </li>
+      <li class="menu-item">
+        <a href="../status/page.html" style="color:#FFF;text-decoration:none">ステータス一覧/比較　　　　　　</a>
+      </li>
+    </ul>
+  </div>
+  <!--テンプレ-->
+  <div class="pages">
+
+
+    <button id="check">ID</button>
+    <div class="object" id="0" gen="0">
+      <p id="gen">0</p> <input size="10" style="margin-top:12px">
+
+      <button style="margin-top:8px">クリア</button> <button id="AddAbsorption">吸収を追加</button>
+    </div>
+
+
+
+
+  </div>
+
+  <script>
+
+    let total_index = [];
+    let id_number = [];
+    let number = 0;
+    let max_absorption = 0;
+    let i = 0;
+    let j = 0;
+    let k = 0;
+
+    id_number[0] = "[0]";
+
+
+    console.log(id_number[0]);
+
+    function AddAbsorption(input) {
+      var id = Number(input);
+      var bool = 0;
+      for (i = 0; i <= number; i++) {
+        if (id_number[i] == id_number[id] + "[1]") {
+          bool = 1;
+        }
+      }
+
+      if (bool !== 1) {
+
+        $("#" + id + ".object").clone(true).appendTo(".pages");
+        $(".object:last").attr("id", number + 1);
+        $(".object:last").attr("gen", 0);
+        $("#" + id + ".object").clone(true).appendTo(".pages");
+        $(".object:last").attr("id", number + 2);
+        $(".object:last").attr("gen", 0);
+        id_number[number + 1] = id_number[id] + "[1]";
+        id_number[number + 2] = id_number[id] + "[2]";
+        console.log(id_number[number + 1]);
+        console.log(id_number[number + 2]);
+
+        number = number + 2;
+
+        generation(id_number[id]);
+        arrangement();
+      }
+    }
+
+    function generation(key) {
+      $gen_length = key.length / 3;
+      if ($gen_length > max_absorption) {
+        max_absorption = $gen_length;
+      }
+      $id_gen = Number($("#" + i + ".object").attr("gen"));
+
+      for (j = 0; j <= $gen_length; j++) {
+        for (i = 0; i <= number; i++) {
+          if (id_number[i] == key.slice(0, 3 * (j))) {
+
+            $id_gen = Number($("#" + i + ".object").attr("gen"));
+            $("#" + i + ".object").attr("gen", $id_gen + 1);
+            $("#" + i + ".object").children("#gen").text("+" + ($id_gen + 1));
+            console.log("search : " + key.slice(0, 3 * (j)) + "id : " + i + "key : " + key);
+          }
+        }
+      }
+    }
+
+    function arrangement() {
+      var elementary_counter;
+      elementary_counter = 0;
+      var elementary = []
+      for (i = 0; i <= number / 2; i++) {
+        elementary[i] = [];
+      }
+      // [検知順][0:id / 1:仮id_number / 2:3進法化id_number / 3:表示上の縦座標]
+      for (j = 0; j <= number; j++) {
+        $(".object[id = " + j + "]").css({ "margin-left": 240 * (id_number[j].length / 3 - 1) + "px" });
+      }
+
+      for (i = 0; i <= number; i++) {
+        if ($(".object[id = " + i + "]").attr("gen") == 0) {
+          elementary[elementary_counter][0] = i;
+          elementary[elementary_counter][1] = id_number[i];
+          elementary_counter++;
+        }
+      }
+
+      for (i = 0; i < elementary_counter; i++) {
+        elementary[i][2] = "";
+        for (j = 0; j >= 0; j++) {
+          if (elementary[i][1].length != (max_absorption + 1) * 3) {
+            elementary[i][1] = elementary[i][1] + "[0]";
+          } else break;
+        }
+
+        for (j = 0; j < max_absorption + 1; j++) {
+          elementary[i][2] = elementary[i][2] + elementary[i][1].slice(1 + (j * 3), 2 + (j * 3))
+        }
+        elementary[i][2] = elementary[i][2].slice(1, elementary[i][2].length);
+        elementary[i][2] = Number(elementary[i][2]);
+      }
+
+      elementary.sort(function (a, b) {
+        if (Number(a[2]) > Number(b[2])) {
+          return 1;
+        } else {
+          return -1;
+        }
+      })
+
+      var prev_id;
+      var margin_top;
+      var margin_left;
+
+      for (i = 0; i < elementary_counter; i++) {
+        $(".object[id = " + elementary[i][0] + "]").css({ "margin-top": 130 * i + "px" });
+      }
+
+
+      for (i = 0; i < max_absorption; i++) {
+        for (j = 0; j < number; j++) {
+          if ($(".object[id = " + j + "]").attr("gen") == i && id_number[j].slice(-3) == "[1]") {
+            prev_id = $.inArray(id_number[j].slice(0, -3), id_number);
+            $(".object[id = " + prev_id + "]").css({ "margin-top": $(".object[id = " + j + "]").css("margin-top") });
+          }
+        }
+      }
+
+
+      //線の描画
+      $(".line").remove();
+
+      for (i = 0; i <= max_absorption*3; i++) {
+        for (j = 0; j <= number; j++) {
+          if ($(".object[id = " + j + "]").attr("gen") == i) {
+            if (id_number[j].slice(-3) == "[1]") {
+              margin_top = Number($(".object[id = " + j + "]").css("margin-top").slice(0, -2));
+              margin_left = Number($(".object[id = " + j + "]").css("margin-left").slice(0, -2));
+
+              $(".pages").append("<div class=\"line\" id=\"" + j + "\" style=\"width:58px;height:0px\"></div>");
+              $(".line[id=" + j + "]").css({ "margin-top": margin_top + 50 + "px", "margin-left": margin_left - 60 + "px" });
+            }
+            if(id_number[j].slice(-3) == "[2]"){
+              margin_top = Number($(".object[id = " + j + "]").css("margin-top").slice(0, -2));
+              margin_left = Number($(".object[id = " + j + "]").css("margin-left").slice(0, -2));
+              $(".pages").append("<div class=\"line\" id=\"" + j + "\" style=\"width:29px;height:" + (Number($(".object[id = " + j + "]").css("margin-top").slice(0, -2)) - Number($(".object[id = " + $.inArray(id_number[j].slice(0,-3),id_number) + "]").css("margin-top").slice(0, -2))) +"px\"></div>");
+              $(".line[id=" + j + "]").css({ "margin-top": margin_top - (Number($(".line[id=" + j + "]").css("height").slice(0,-2))) + 50 + "px", "margin-left": margin_left-30 + "px" });
+            }
+          }
+        }
+      }
+
+    }
+
+    function check() {
+      for (i = 0; i <= number; i++) {
+        console.log(i + " : " + id_number[i]);
+      }
+    }
+
+
+    $("#AddAbsorption").on("click", function (event) {
+      AddAbsorption($(this).parent().attr("id"));
+    });
+
+    $("#check").on("click", function (event) {
+      check();
+    })
+
+
+
+  </script>
+</body>
+
+</html>

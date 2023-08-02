@@ -95,12 +95,16 @@ html {
  overflow-y: scroll;
 }
 
+.InputName{
+  margin-left: 20px;
+}
 .main_1{
   display: block;
-  height: 70px;
+  height: 120px;
   width: 80%;
   margin: auto;
   background-color: gray;
+  position: relative;
 }
 .main_2{
   display: block;
@@ -108,6 +112,7 @@ html {
   width: 80%;
   margin: auto;
   background-color:gray;
+  position: relative;
 }
 .reset{
   margin-left:10%;
@@ -124,6 +129,8 @@ html {
   background-color: antiquewhite;
   overflow-wrap: break-word;
 }
+
+
 .button{
 position: relative;
 margin: auto 0 0 0;
@@ -143,7 +150,7 @@ table{
   text-align: left;
 }
 
-.category{
+.block{
 background-color: darkgrey;
 height: 30px;
 display: inline-block;
@@ -163,7 +170,22 @@ transition: height 0.3s linear;
   display: none;
 }
 
+.block.open{
+  width: 60%;
+  height: max-content;
+}
+.block.open .sub {
+  display: block;
+}
+
+.rank_table{
+  table-layout: fixed;
+  visibility:hidden;
+  width: 450px;
+  height:27px;
+  font-size: 16px;
+  text-align: left;
+}
 .rank{
-  position: relative;
-top:-90px;
+  margin-left:10%;
 }
